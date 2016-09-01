@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html ng-app="Principal">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Nomina UD</title>
+
+
+
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <style> .btn{margin-bottom: 20px} </style>
+    <script src="js/angular.js" > </script>
+    <script src="js/angular-route.js"></script>
+    <script src="js/principal.js"></script>
+    <script src="main.js"></script>
+
+    <script src="Controladores/main.js"></script>
+    <script src="Controladores/c_usuarios.js"> </script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap-select.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+  </head>
+  <body ng-app="principal">
+
+
+            <div class="row" >
+                              <div  class="jumbotron" >
+                           <h1 class="text-center">REPORTE LIQUIDACION</h1>
+                       </div>
+
+
+
+
+
+            </div>
+
+
+            <div class="row" >
+              <div class="col-md-5 col-md-offset-1" ng-controller="lista_empleados">
+                  <div class="panel panel-default" style=" width:216%; ">
+                    <div class="panel-heading">RESUMEN GENERAL</div>
+                    <div class="panel-body">
+                    <div class="row">
+                      <div class="col-xs-9">
+                        <table class="table" >
+                          <tr>
+                            <td><label class="col-md-3">BUSCAR: </label></td> <td><input class="form-control" type="text" name="txtBuscarEmpl"></td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                        <table class="table table-hover" >
+                      <tr>
+                        <th>CC</th><th>Nombre</th><th>VIG/RP</th><th>Valor Periodo</th><th>Iva</th><th>Base antes de Iva</th><th>Base de Retencion Aplicada</th><th>Retencion en la fuente a aplicar</th><th>VIG/RP</th><th>Reteiva</th><th>Reteica</th><th>Estampillas Ud</th><th>Descuentos</th><th>Valor a pagar</th><th>Total Descuentos</th><th>NETO a PAGAR</th>
+                      </tr>
+                      <tr>
+                        <td> DATOS DE LOS EMPLEADOS</td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td>
+                      </tr>
+                      </table>
+                    </div>
+
+                    </div>
+					</div>
+               </div>
+			</div>
+
+					<div class="row">
+					<div class="col-md-5 col-md-offset-1" ng-controller="lista_empleados">
+                  <div class="panel panel-default" style=" width:216%; ">
+                    <div class="panel-heading" >REPORTE TOTAL</div>
+                    <div class="panel-body" >
+                      <div class="row">
+                     <table class="table table-hover" >
+                      <tr>
+                        <th>CC</th><th>Nombre</th><th>VIG/RP</th><th>Valor Periodo</th><th>Iva</th><th>Base antes de Iva</th><th>Base de Retencion Aplicada</th><th>Retencion en la fuente a aplicar</th><th>VIG/RP</th><th>Reteiva</th><th>Reteica</th><th>Estampillas Ud</th><th>Descuentos</th><th>Valor a pagar</th><th>Total Descuentos</th><th>NETO a PAGAR</th>
+                      </tr>
+                      <tr>
+                        <td> TOTAL</td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td><td>  </td>
+                      </tr>
+                      </table>
+					 </div>
+                  </div>
+					</div>
+
+					</div>
+                </div>
+
+
+
+
+
+
+
+				<div class="row">
+                    <div class="col-md-3 pull-right">
+                      <button type="button" onclick=" location.href='http://localhost/TitanAg/Index.html'" class="btn ">REGRESAR</button>
+                    </div>
+
+                    </div>
+
+
+
+
+
+
+
+
+  </body>
+</html>

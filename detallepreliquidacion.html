@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html ng-app="Principal">
+
+    <head>
+
+    <title>Nomina UD</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+
+    <style> .btn{margin-bottom: 20px} </style>
+
+    <script src="js/angular.js" > </script>
+    <script src="js/angular-route.js"></script>
+    <script src="Controladores/main.js"></script>
+    <script src="js/principal.js"></script>
+   	<script src="Controladores/c_detallep.js"> </script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap-select.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+   	<script type="text/javascript" src="Servicios/s_liquidacion.js"></script>
+
+    </head>
+<!--  <body ng-app="principal" ng-controller="c_detallep">
+
+
+            <div class="row" >
+                              <div  class="jumbotron" >
+                           <h1 class="text-center">Detalle Preliquidacion</h1>
+                       </div>
+
+                       <div class="col-xs-9">
+                         <table class="table" >
+                           <tr>
+                             <td><label class="col-md-3">BUSCAR:</td><td><input type="text" ng-model="buscador"  /></td>
+
+                           </tr>
+                         </table>
+                       </div>
+
+
+
+            </div>
+
+
+                    <dir class="row" ng-show="detalle_pre != null">
+                        <table class="table table-hover" >
+                        <tr>
+                          <th></th><th>Preliquidacion</th><th>Valor</th><th>Concepto</th><th>Persona</th>
+                        </tr>
+                        <tr class="large-12 columns">
+                       <tr class="panel callout radius" ng-repeat="detallepre in detalle_pre | filter: buscador">
+
+                          <td><input type="radio" value={{detallepre.preliquidacion.id}}>
+                          </td><td> {{ detallepre.preliquidacion.id}}
+                          </td><td> {{ detallepre.valor}} </td>
+                          <td> {{ detallepre.concepto.id}} </td>
+                          <td> {{ detallepre.Persona}} </td>
+
+                        </tr>
+                        </table>
+                      </div>
+                    </dir>
+
+            </div>
+            <div class="row">
+                    <div class="col-md-8 pull-right">
+                      <button type="button" class="btn ">NUEVA</button>
+                      <button type="button" class="btn ">VER</button>
+                      <button type="button" class="btn btn-warning">ELIMINAR</button>
+
+                    </div>
+
+                    </div>
+
+  </body>
+</html>
+-->
+
+      <body  ng-app="principal" ng-controller="c_detallep">
+
+        <div class="row" >
+
+          <div  class="jumbotron" >
+            <h1 class="text-center">Detalle preliquidacion</h1>
+          </div>
+
+          <div class="col-xs-9">
+            <table class="table" >
+              <tr>
+                <td><label class="col-md-3">BUSCAR:</td>
+                <td><input type="text" ng-model="buscador"/></td>
+               </tr>
+             </table>
+            </div>
+
+        </div>
+
+
+        <div>
+  				<div>
+            <table st-table="displayedCollection" st-safe-src="rowCollection" class="table table-striped">
+              <tr>
+              <th></th>
+              <th>Preliquidacion</th>
+              <th>Valor</th>
+              <th>Concepto</th>
+              <th>Persona</th>
+                </tr>
+
+              <tbody ng-repeat="(key, item) in data | filter: buscador">
+                <tr>
+                  <td></td>
+                  <td>{{item.Preliquidacion.Id}}</td>
+                  <td>{{item.Valor}}</td>
+                  <td>{{item.Concepto.Id}}</td>
+                  <td>{{item.Persona}}</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="row">
+                    <div class="col-md-7 pull-right">
+                            <button type="button" ng-click="AtrasPreliquidacion()" class="btn ">ATRAS</button>
+          <!--                    <button type="button" class="btn ">VER</button>
+                      <button type="button" class="btn btn-warning">ELIMINAR</button>
+          -->
+                    </div>
+
+                    </div>
+
+          </div>
+        </div>
+
+      </body>
+</html>

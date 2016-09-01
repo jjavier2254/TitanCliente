@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html ng-app="Principal">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Nomina UD</title>
+
+
+
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <style> .btn{margin-bottom: 20px} </style>
+    <script src="js/angular.js" > </script>
+    <script src="js/angular-route.js"></script>
+
+    <script src="Controladores/c_usuarios.js"> </script>
+     <script type="text/javascript" src="Servicios/s_liquidacion.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="main.js"></script>
+
+    <script src="Controladores/main.js"></script>
+    <script src="js/bootstrap-select.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+  </head>
+  <body ng-app="principal" ng-controller="c_usuarios">
+
+
+            <div class="row" >
+                              <div  class="jumbotron" >
+                           <h1 class="text-center">DETALLES PRE-LIQUIDACION NOMINA</h1>
+                       </div>
+
+
+
+
+
+            </div>
+            <div class="row" ng-show="lista_empl != null">
+              <div class="col-md-5 col-md-offset-1" ng-controller="getEmpl_Hor_Cat" >
+                  <div class="panel panel-default">
+                    <div class="panel-heading">EMPLEADOS EN LA NOMINA</div>
+                    <div class="panel-body">
+                    <div class="row">
+                      <div class="col-xs-9">
+                        <table class="table" >
+                          <tr>
+                            <td><label class="col-md-3">BUSCAR:</td><td><input type="text" ng-model="buscador"  /></td>
+
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="row">
+                        <table class="table table-hover" >
+                      <tr>
+                        <th></th><th>Tipo Documento</th><th>Numero Documento</th><th>Nombre Completo</th><th>Codigo concepto</th><th>Rubro</th>
+                      </tr>
+                      <tr class="large-12 columns">
+                     <tr class="panel callout radius" ng-repeat="empleado in lista_empl | filter: buscador">
+
+                        <td><input type="checkbox" value={{empleado.num_documento_persona.num_documento_persona}}></td><td> {{ empleado.num_documento_persona.tipo_documento.valor_parametro}} </td><td> {{ empleado.num_documento_persona.num_documento_persona}} </td><td> {{ empleado.num_documento_persona.primer_nombre + " " + empleado.num_documento_persona.segundo_nombre + " " + empleado.num_documento_persona.primer_apellido + " "  + empleado.num_documento_persona.segundo_apellido+ " " }} </td><td>{{empleado.concepto.codigo }}</td><td>{{empleado.concepto.rubro.descripcion }}</td>
+</tr>
+                      </tr>
+                      </table>
+                    </div>
+
+
+
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-3 pull-right">
+
+                      <button type="button" onclick=" location.href='http://localhost/TitanAg/resumen.html'"  class="btn btn-warning">LIQUIDAR</button>
+					  <button type="button" onclick=" location.href='http://localhost/TitanAg/Lista_Liquidaciones.html'" class="btn">ATRAS</button>
+                    </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-5 " >
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Datos Personales</div>
+                    <div class="panel-body">
+
+                      <div class="panel panel-default">
+                        <div class="panel-heading">Datos bancarios</div>
+                        <div class="panel-body">
+                        <table class="table table-hover">
+                          <tr>
+                            <th>
+                              BANCO:
+                            </th>
+                            <td>
+                              <p>XXXXXXXXXXXXXX</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th>
+                              TIPO DE CUENTA:
+                            </th>
+                            <td>
+                              <p>XXXXXXXXXXXXXX</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th>
+                              No CUENTA:
+                            </th>
+                            <td>
+                              <p>XXXXXXXXXXXXXX</p>
+                            </td>
+                          </tr>
+                        </table>
+                        </div>
+                      </div>
+                      <div class="panel panel-default">
+                        <div class="panel-heading">Datos del contrato</div>
+                        <div class="panel-body">
+                        <table class="table table-hover">
+                          <tr>
+                            <th>VALOR:</th>
+                            <td><p>XXXXXXXXXXXXXX</p></td>
+                            <th>HORAS:</th>
+                            <td><p>XXXXXXXXXXXXXX</p></td>
+                          </tr>
+                          <tr>
+                            <th>INICIO:</th>
+                            <td><p>DD/MM/AAAA</p></td>
+                            <th>FIN:</th>
+                            <td> <p>DD/MM/AAAA</p></td>
+                          </tr>
+                          <tr>
+                            <th>VALOR HORA:</th>
+                            <td><p>XXXXXXXXXXXXXX</p></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+
+                        </table>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+
+
+                </div>
+            </div>
+
+              <div class="jumbotron" ng-show="lista_empl == null">
+                <p class="text-center">No se encontraron Datos de Empleados</p>
+              </div>
+
+
+
+
+  </body>
+</html>

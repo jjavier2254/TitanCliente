@@ -1,0 +1,57 @@
+
+         <div  class="jumbotron" >
+           <h1 class="text-center">Datos de los Empleados</h1>
+       </div>
+
+<div class="col-md-6" ng-controller="lista_empleados">
+  <div class="panel panel-default">
+    <div class="panel-heading">Lista de empleados</div>
+    <div class="panel-body">
+      <table class="table table-hover" >
+      <tr>
+        <th>Tipo Documento</th><th>Numero Documento</th><th>Nombre Completo</th><th>Contrato</th><th>Descuentos</th>
+      </tr>
+      <tr ng-repeat="empleado in lista_empl ">
+        <td> {{ empleado.tDoc}} </td><td> {{ empleado.kDoc}} </td><td> {{ empleado.nombre}} </td><td> <a href="#">Ver</a> </td><td> <a href="#">Ver</a> </td>
+      </tr>
+      </table>
+    </div>
+  </div>
+
+
+
+</div>
+<div class="col-md-6 " ng-controller="lista_empleados">
+  <div class="panel panel-default">
+    <div class="panel-heading">Detalles del empleado</div>
+    <div class="panel-body">
+      <div class="panel panel-default">
+        <div class="panel-heading">Datos Personales</div>
+        <div class="panel-body">
+
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">Datos bancarios</div>
+        <div class="panel-body">
+
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">Decreto 1010/13 Formato P Naturales</div>
+        <div class="panel-body">
+
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">Otros Datos</div>
+        <div class="panel-body">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>

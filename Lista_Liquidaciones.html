@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html ng-app="Principal">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Nomina UD</title>
+
+
+
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <style> .btn{margin-bottom: 20px} </style>
+
+
+
+    <script src="js/angular.js" > </script>
+    <script src="js/angular-route.js"></script>
+
+  <script src="Controladores/main.js"></script>
+  <script src="js/principal.js"></script>
+    <script src="Controladores/c_preliquidacion.js"> </script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap-select.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="Servicios/s_liquidacion.js"></script>
+
+  </head>
+  <body ng-app="principal" ng-controller="c_preliquidacion">
+
+
+            <div class="row" >
+                              <div  class="jumbotron" >
+                           <h1 class="text-center">Lista de Pre-Liquidaciones</h1>
+                       </div>
+
+                       <div class="col-xs-9">
+                         <table class="table" >
+                           <tr>
+                             <td><label class="col-md-3">BUSCAR:</td><td><input type="text" ng-model="buscador"  /></td>
+
+                           </tr>
+                         </table>
+                       </div>
+
+
+
+            </div>
+
+
+                    <dir class="row" ng-show="lista_pre != null">
+                        <div  >
+                          <table class="table table-hover" >
+                        <tr>
+                          <th></th>
+                          <th>Id de la pre-liquidacion</th>
+                          <th>Nombre</th>
+                          <th>Nomina</th>
+                          <th>Id Usuario</th>
+                          <th>Estado</th>
+                          <th>Fecha</th>
+                          <th>Descripcion</th>
+                          <th>Fecha Inicio</th>
+                          <th>Fecha Fin</th>
+                        </tr>
+                        <tr class="large-12 columns">
+                       <tr class="panel callout radius" ng-repeat="preliquidacion in lista_pre | filter: buscador">
+
+                          <td><label value={{preliquidacion.id}}></td>
+                          <td> {{ preliquidacion.Id}} </td>
+                          <td> {{ preliquidacion.Nombre}} </td>
+                          <td> {{ preliquidacion.Nomina.Id}} </td>
+                          <td> {{ preliquidacion.IdUsuario}} </td>
+                          <td> {{ preliquidacion.Estado}} </td>
+                          <td> {{ preliquidacion.Fecha}} </td>
+                          <td> {{ preliquidacion.Descripcion}} </td>
+                          <td> {{ preliquidacion.FechaInicio}} </td>
+                          <td> {{ preliquidacion.FechaFin}} </td>
+                          <td style="display: inline-block">
+                          <button type="button" ng-click="go(preliquidacion.id)" class="btn btn-sm btn-danger">
+                            <i>
+                            </i>Detalle
+                          </button>
+                          <button type="button" ng-click="GenerarPreliquidacion()" class="btn btn-sm btn-danger">
+                            <i>
+                            </i>Resumen
+                          </button>
+                          </td>
+
+                        </tr>
+                        </table>
+
+                      </div>
+                    </dir>
+
+            </div>
+            <div class="row">
+                    <div class="col-md-7 pull-right">
+                        <button type="button" ng-click="insertarPreliquidacion()" class="btn">NUEVA</button>
+                        <button type="button" ng-click="AtrasNomina()" class="btn ">ATRAS</button>
+<!--                    <button type="button" class="btn ">VER</button>
+                      <button type="button" class="btn btn-warning">ELIMINAR</button>
+-->
+                    </div>
+
+                    </div>
+
+<!--
+                <div class="container">
+              <div class="row" >
+                <table class="table">
+                  <tr>
+                    <td>
+                      <label>TIPO DE CONTRATACION: </label>
+                    </td>
+                    <td>
+                      <select class="selectpicker"  >
+                             <option value="0">Especial</option>
+                           </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label>TIPO DE NOMINA: </label>
+                    </td>
+                    <td>
+                      <select class="selectpicker"  >
+                             <option value=2 >Horas</option>
+                           </select>
+                    </td>
+                  </tr>
+                </table>
+
+              </div>
+            </div>
+
+			<div class="row">
+                    <div class="col-md-8 pull-right">
+                      <button type="button" onclick=" location.href='http://localhost/TitanAg/index.html'" class="btn ">GENERAR</button>
+                      <button type="button" onclick=" location.href='http://localhost/TitanAg/nominas.html'" class="btn ">REGRESAR</button>
+
+                    </div>
+
+                    </div>
+
+
+-->
+  </body>
+</html>
